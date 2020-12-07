@@ -116,6 +116,7 @@ if ($formdata = $mform->get_data()) {
                     $text .= get_string('deletedgroup', 'attendance');
                 } else {
                     $text .= $sess->groupid ? $reportdata->groups[$sess->groupid]->name  : get_string('commonsession', 'attendance');
+                    $text .= ' ' .strip_tags($sess->description);
                 }
                 $data->tabhead[] = $text;
                 if (isset($formdata->includeremarks)) {
